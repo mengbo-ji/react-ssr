@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -9,6 +10,7 @@ function Home() {
   return (
     <div onClick={handleClick}>
       Home
+      <Link to={'/list'}>go to list</Link>
     </div>
   );
 };

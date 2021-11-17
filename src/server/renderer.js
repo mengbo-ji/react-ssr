@@ -4,6 +4,7 @@ import { StaticRouter } from 'react-router-dom';
 import routes from '../share/routes';
 import { renderRoutes } from 'react-router-config';
 import { Provider } from 'react-redux';
+import serialize from 'serialize-javascript';
 
 export default (req, store) => {
   const content = renderToString(
@@ -11,7 +12,7 @@ export default (req, store) => {
       <StaticRouter location={req.path}>{renderRoutes(routes)}</StaticRouter>
     </Provider>
   );
-  const initialState = JSON.stringify(store.getState());
+  const initialState = serialize(store.getState());
   return `
   <html>
     <head>

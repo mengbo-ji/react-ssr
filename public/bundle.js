@@ -40957,7 +40957,7 @@ var SAVE_USER = 'save_user';
 var fetchUser = function fetchUser() {
   return /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch) {
-      var res;
+      var res, response;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -40967,12 +40967,18 @@ var fetchUser = function fetchUser() {
 
             case 2:
               res = _context.sent;
+              response = {
+                data: [{
+                  id: 1,
+                  name: '</script><script>alert(1)</script>'
+                }]
+              };
               dispatch({
                 type: SAVE_USER,
-                payload: res
+                payload: response
               });
 
-            case 4:
+            case 5:
             case "end":
               return _context.stop();
           }

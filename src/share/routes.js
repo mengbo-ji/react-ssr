@@ -9,6 +9,6 @@ export default [
   },
   {
     path: '/list',
-    component: List,
+    ...List,
   }
 ]

@@ -24,4 +24,11 @@ function List() {
   );
 };
 
-export default List;
+function loadData(store) {
+  return store.dispatch(fetchUser());
+}
+
+export default {
+  component: List,
+  loadData,
+}
